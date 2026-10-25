@@ -35,13 +35,13 @@ b,strong{font-weight:700}
 p{margin:0}
 
 /* ---------- type scale: 4 sizes only ---------- */
-.t-title{font-size:calc(var(--u)*3.4);line-height:1.1;letter-spacing:-.02em;font-weight:800}
-.t-lead{font-size:calc(var(--u)*2);line-height:1.35;font-weight:600;letter-spacing:-.01em}
-.t-body{font-size:calc(var(--u)*1.55);line-height:1.5}
+.t-title{text-wrap:balance;font-size:calc(var(--u)*3.4);line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.t-lead{text-wrap:pretty;font-size:calc(var(--u)*2);line-height:1.35;font-weight:600;letter-spacing:-.01em}
+.t-body{text-wrap:pretty;font-size:calc(var(--u)*1.55);line-height:1.5}
 .t-note{font-size:calc(var(--u)*1.1);line-height:1.45;color:var(--soft)}
 .label{font-size:calc(var(--u)*.9);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
 h2{margin:calc(var(--u)*.5) 0 calc(var(--u)*2.4)}
-h3{font-size:calc(var(--u)*1.7);line-height:1.25;margin:0 0 calc(var(--u)*.5);font-weight:750;letter-spacing:-.01em}
+h3{text-wrap:balance;font-size:calc(var(--u)*1.7);line-height:1.25;margin:0 0 calc(var(--u)*.5);font-weight:750;letter-spacing:-.01em}
 .soft{color:var(--soft)}
 
 /* ---------- stage ---------- */
@@ -79,12 +79,9 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 .s-title .frame{justify-content:space-between}
 .s-title .kicker i{background:#a9d7b8;color:#163f2c}
 .s-title .kicker .label{color:#a9d7b8}
-.s-title h1{font-size:calc(var(--u)*6.4);line-height:1;letter-spacing:-.035em;margin:calc(var(--u)*1.4) 0 0;font-weight:850;max-width:12ch}
-.s-title .who{font-size:calc(var(--u)*1.5);color:#c9d8cc;margin-top:calc(var(--u)*1.8)}
-.s-title .bigq{display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*2.4);align-items:center;border-top:1px solid rgba(243,239,228,.25);padding-top:calc(var(--u)*2)}
-.s-title .bigq .label{color:#a9d7b8}
-.s-title .bigq p{font-size:calc(var(--u)*2.4);font-weight:700;line-height:1.25;letter-spacing:-.01em;max-width:30ch}
-.s-title .orb{position:absolute;right:calc(var(--u)*-6);top:calc(var(--u)*-8);width:calc(var(--u)*46);pointer-events:none}
+.s-title h1{font-size:calc(var(--u)*6.4);line-height:1.02;letter-spacing:-.035em;margin:0;font-weight:850}
+.s-title .sub{font-size:calc(var(--u)*2.4);font-weight:600;line-height:1.3;color:#c9d8cc;margin-top:calc(var(--u)*2.4)}
+.s-title .who{font-size:calc(var(--u)*1.5);color:#c9d8cc;border-top:1px solid rgba(243,239,228,.25);padding-top:calc(var(--u)*1.6)}
 
 /* ---------- 2 definition ---------- */
 .def{border-left:calc(var(--u)*.5) solid var(--forest-2);padding-left:calc(var(--u)*2)}
@@ -109,7 +106,7 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 .split > div{padding:calc(var(--u)*2.2) calc(var(--u)*2.4)}
 .split .a{background:var(--sky-tint)}.split .n{background:var(--forest-tint)}
 .split .ico{width:calc(var(--u)*3.6);height:calc(var(--u)*3.6);margin-bottom:calc(var(--u)*.8)}
-.split .t-lead{margin:0 0 calc(var(--u)*.6)}
+.split .t-lead{margin:calc(var(--u)*.2) 0 calc(var(--u)*.6)}
 .split .t-note{margin-top:calc(var(--u)*1)}
 
 /* ---------- 5 kyoto ---------- */
@@ -161,6 +158,7 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 /* ---------- 10 discussion ---------- */
 .dq{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*2)}
 .dq .card{display:flex;flex-direction:column;padding:calc(var(--u)*2.4)}
+.dq .card .label{margin-bottom:calc(var(--u)*1.2)}
 .dq .no{font-size:calc(var(--u)*4);font-weight:850;line-height:1;color:var(--forest-2);letter-spacing:-.03em}
 .dq h3{margin:calc(var(--u)*1.2) 0 calc(var(--u)*.8)}
 .src{margin-top:calc(var(--u)*2.2)}
@@ -182,10 +180,9 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
   .vsrow .mid{justify-self:center}
   .sinkwrap svg{max-width:70%}
   .t-title{font-size:calc(var(--u)*3.1);overflow-wrap:break-word}
-  .s-title h1{font-size:calc(var(--u)*4.6);max-width:none}
+  .s-title h1{font-size:calc(var(--u)*3.4)}
+  .s-title .sub{font-size:calc(var(--u)*2.4)}
   .s-title .frame{min-height:calc(var(--u)*115);gap:calc(var(--u)*6)}
-  .s-title .bigq{grid-template-columns:1fr}
-  .s-title .orb{width:calc(var(--u)*60);right:calc(var(--u)*-20);top:calc(var(--u)*-14)}
   .s-title{overflow:hidden;position:relative}
   .kicker{flex-wrap:wrap}
   .foot,.hud .nav,.progress{display:none}
@@ -206,137 +203,115 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 
 <!-- 1 -->
 <section class="slide s-title"><div class="frame">
-  <svg class="orb" viewBox="0 0 400 400" aria-hidden="true">
-    <g fill="none" stroke="#a9d7b8">
-      <circle cx="200" cy="200" r="190" stroke-opacity=".10" stroke-width="2"/>
-      <circle cx="200" cy="200" r="150" stroke-opacity=".14" stroke-width="2"/>
-      <circle cx="200" cy="200" r="110" stroke-opacity=".18" stroke-width="2"/>
-      <circle cx="200" cy="200" r="70" stroke-opacity=".24" stroke-width="2"/>
-    </g>
-    <path d="M200 120 C150 160 150 230 200 280 C250 230 250 160 200 120 Z" fill="#a9d7b8" fill-opacity=".16"/>
-    <path d="M200 135 L200 280" stroke="#a9d7b8" stroke-opacity=".35" stroke-width="3"/>
-  </svg>
+  <div class="kicker"><i>Group Study 2</i><span class="label">Environment</span></div>
   <div>
-    <div class="kicker"><i>Group Study 2</i><span class="label">Environment · Group 7E</span></div>
-    <h1>Engineers and the Environment</h1>
-    <div class="who">한태영 · Engineering Ethics · Oct. 26, 2026</div>
+    <h1>Engineers and<br>the Environment</h1>
   </div>
-  <div class="bigq">
-    <span class="label">Big question</span>
-    <p>Engineers both pollute and clean up. What do we owe the environment?</p>
-  </div>
+  <div class="who">Group 7E · 한태영 · Engineering Ethics · Oct. 26, 2026</div>
 </div></section>
 
 <!-- 2 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q1</i><span class="label">Sustainable development</span></div>
-  <h2 class="t-title">Use it, but leave enough</h2>
+  <div class="kicker"><i>Q1</i></div>
+  <h2 class="t-title">What is sustainable development?</h2>
   <div class="body">
-    <div class="row" style="grid-template-columns:1.35fr 1fr">
-      <div class="def">
-        <p class="t-lead">Meeting <span class="hl-f">present needs</span> without harming nature's capacity to absorb our impact, or <span class="hl-f">future generations'</span> ability to meet their own needs.</p>
-        <p class="t-note">ASCE definition, Harris ch. 9</p>
-      </div>
-      <div class="panel short"><span class="label">In one line</span><p>Don't use up what nature and our grandchildren will need.</p></div>
+    <div class="def">
+      <span class="label">Definition (ASCE)</span>
+      <p class="t-lead" style="margin-top:calc(var(--u)*.8)">Development that meets present needs without harming nature’s ability to absorb human impact, and without harming future generations’ ability to meet their own needs.</p>
+      <p class="t-note">Harris et al., ch. 9</p>
     </div>
-    <div class="row c2" style="margin-top:calc(var(--u)*2.2)">
-      <div class="card"><span class="label hl-f">Why it matters</span><p class="t-body">Codes now reach past today's client to <b>nature and future people</b>. NSPE III.2.d and ASCE both name it.</p></div>
-      <div class="card"><span class="label hl-g">Its limit</span><p class="t-body">Engineers "<b>should strive to</b>" comply. A recommendation, not a duty.</p></div>
+    <div class="row c2" style="margin-top:calc(var(--u)*2.6)">
+      <div class="card"><span class="label hl-f">Significance</span><p class="t-body">Engineering codes now consider not only the client, but also nature and future generations (NSPE III.2.d, ASCE).</p></div>
+      <div class="card"><span class="label hl-g">Limit</span><p class="t-body">The codes only say engineers “should strive to” follow it. It is a recommendation, not a requirement.</p></div>
     </div>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Engineers and the Environment</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 3 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q2</i><span class="label">Three attitudes · Petulla, 1987</span></div>
-  <h2 class="t-title">Where does a company stand against the law?</h2>
+  <div class="kicker"><i>Q2</i></div>
+  <h2 class="t-title">Three attitudes toward the environment</h2>
   <div class="body">
     <div class="att">
       <div>
-        <div class="lvl"><div class="bar" style="height:30%;background:var(--clay)"></div><div class="law"><b>The law</b></div></div>
+        <div class="lvl"><div class="bar" style="height:30%;background:var(--clay)"></div><div class="law"><b>Legal standard</b></div></div>
         <span class="pill p-c">Sub-minimal</span>
-        <h3>Below the law</h3>
-        <p class="t-body soft">Do the least. If the fine is cheaper than the fix, pay the fine.</p>
-        <p class="say hl-c">"Break it if it pays."</p>
+        <h3>Less than the law requires</h3>
+        <p class="t-body soft">Does as little as possible. Pays the fine if it is cheaper than fixing the problem.</p>
       </div>
       <div>
         <div class="lvl"><div class="bar" style="height:59%;background:var(--gold)"></div><div class="law"></div></div>
-        <span class="pill p-g">Minimalist</span>
-        <h3>Exactly the law</h3>
-        <p class="t-body soft">Comply, no more. Regulation is a cost of doing business.</p>
-        <p class="say hl-g">"Only what's required."</p>
+        <span class="pill p-g">Minimalist (compliance)</span>
+        <h3>Exactly what the law requires</h3>
+        <p class="t-body soft">Follows regulations, often reluctantly. Sees them as a cost of doing business.</p>
       </div>
       <div>
         <div class="lvl"><div class="bar" style="height:100%;background:var(--forest-2)"></div><div class="law"></div></div>
         <span class="pill p-f">Progressive</span>
-        <h3>Beyond the law</h3>
-        <p class="t-body soft">Backed by the CEO. Pays off long term, and some truly care.</p>
-        <p class="say hl-f">"More than asked."</p>
+        <h3>More than the law requires</h3>
+        <p class="t-body soft">Supported by the CEO. Sees protection as good for the long term, and some firms are genuinely committed.</p>
       </div>
     </div>
-    <div class="why"><span class="label">Why go beyond</span><span class="chip">Self-interest</span><span class="chip">Human well-being</span><span class="chip">Respect for nature</span></div>
+    <p class="t-body" style="margin-top:calc(var(--u)*2.4)"><b>Reasons for the progressive attitude:</b> <span class="soft">self-interest, human well-being, and respect for nature.</span></p>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Source: Petulla (1987), in Harris et al., ch. 9</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 4 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q3</i><span class="label">Two views of nature</span></div>
+  <div class="kicker"><i>Q3</i></div>
   <h2 class="t-title">Anthropocentric vs. non-anthropocentric</h2>
   <div class="body">
     <div class="split">
       <div class="a">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14" r="8" fill="var(--sky)"/><path d="M8 44c0-10 7-16 16-16s16 6 16 16" fill="var(--sky)"/></svg>
-        <span class="pill p-s">Anthropocentric · 인간중심</span>
-        <p class="t-lead">Only humans have value in themselves.</p>
-        <p class="t-body">Nature matters because it is <b>useful</b> to us.</p>
-        <p class="t-note">Save the forest for wood, clean air and recreation.</p>
+        <span class="pill p-s">Anthropocentric (인간중심)</span>
+        <p class="t-lead">Only humans have intrinsic value.</p>
+        <p class="t-body">Nature has instrumental value: it matters because it is useful to people.</p>
+        <p class="t-note">e.g. protect a forest for wood, clean air and recreation</p>
       </div>
       <div class="n">
-        <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 L38 28 H10 Z" fill="var(--forest-2)"/><path d="M24 14 L40 38 H8 Z" fill="var(--forest-2)" opacity=".75"/><rect x="21" y="38" width="6" height="8" fill="var(--forest-2)"/></svg>
-        <span class="pill p-f">Non-anthropocentric · 비인간중심</span>
-        <p class="t-lead">Nature has value in itself, too.</p>
-        <p class="t-body">Some natural things matter <b>on their own</b>.</p>
-        <p class="t-note">Save the forest because it deserves respect.</p>
+        <span class="pill p-f">Non-anthropocentric (비인간중심)</span>
+        <p class="t-lead">Some natural things have intrinsic value.</p>
+        <p class="t-body">Nature matters in itself, not only because people use it.</p>
+        <p class="t-note">e.g. protect a forest because it deserves respect</p>
       </div>
     </div>
     <div class="row c2" style="margin-top:calc(var(--u)*1.8)">
-      <div class="card"><span class="label hl-f">Aldo Leopold · land ethic</span><p class="t-body">We belong to one <b>biotic community</b> with soil, water, plants and animals.</p></div>
-      <div class="card"><span class="label hl-f">The textbook · a modified view</span><p class="t-body">Respect nature for its own sake, <b>but</b> a large human good can justify harm. Blind salamanders vs. human lives.</p></div>
+      <div class="card"><span class="label hl-f">Aldo Leopold: land ethic</span><p class="t-body">Humans are members of a biotic community with soil, water, plants and animals.</p></div>
+      <div class="card"><span class="label hl-f">Textbook position</span><p class="t-body">A modified non-anthropocentric view: respect nature, but harm can be justified for a large enough human good (e.g. blind salamanders in Austin).</p></div>
     </div>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Engineers and the Environment</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 5 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q4</i><span class="label">What it is · Singer, "One Atmosphere"</span></div>
-  <h2 class="t-title">The Kyoto Protocol in four numbers</h2>
+  <div class="kicker"><i>Q4</i></div>
+  <h2 class="t-title">What is the Kyoto Protocol?</h2>
   <div class="body">
     <div class="row c4">
-      <div class="stat"><div class="n">1997</div><p class="l t-body">Signed under the UN climate convention (Rio, 1992)</p></div>
-      <div class="stat"><div class="n">39</div><p class="l t-body">Developed nations with targets</p></div>
+      <div class="stat"><div class="n">1997</div><p class="l t-body">Adopted under the UN climate convention (Rio, 1992)</p></div>
+      <div class="stat"><div class="n">39</div><p class="l t-body">Developed nations given targets</p></div>
       <div class="stat"><div class="n">−5%</div><p class="l t-body">Below 1990 levels by 2012</p></div>
       <div class="stat"><div class="n hl-c">0</div><p class="l t-body">Targets for developing nations</p></div>
     </div>
-    <p class="t-body soft" style="margin-top:calc(var(--u)*1.8)"><b style="color:var(--ink)">Emissions trading:</b> buy credits from a country with some to spare.</p>
-    <div class="vsrow">
-      <div class="card"><span class="label hl-c">Criticism</span><p class="t-body"><b>Bush:</b> unfair, China and India exempt.<br><b>Lomborg:</b> high cost, small effect.</p></div>
-      <div class="mid">vs</div>
-      <div class="card"><span class="label hl-f">Singer's reply</span><p class="t-body">Not the solution, <b>the first step</b>. A platform to bring developing nations in.</p></div>
+    <p class="t-body" style="margin-top:calc(var(--u)*1.8)"><b>Emissions trading:</b> <span class="soft">a country can buy credits from a country that has some to spare.</span></p>
+    <div class="row c2" style="margin-top:calc(var(--u)*2.2)">
+      <div class="card"><span class="label hl-c">Criticism</span><p class="t-body">Bush (2000): unfair because China and India were exempt. Lomborg: too costly for its effect.</p></div>
+      <div class="card"><span class="label hl-f">Singer’s response</span><p class="t-body">Kyoto is a first step, not the full solution. It can bring developing nations in later.</p></div>
     </div>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Source: Singer, One World, ch. 2</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 6 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q4</i><span class="label">Why it is rather fair</span></div>
-  <h2 class="t-title">The sky is one shared sink</h2>
+  <div class="kicker"><i>Q4</i></div>
+  <h2 class="t-title">Why is it rather fair?</h2>
   <div class="body">
     <div class="sinkwrap">
-      <svg viewBox="0 0 300 260" role="img" aria-label="A shared sink, mostly filled by rich countries">
+      <svg viewBox="0 0 300 260" role="img" aria-label="A sink nearly full, mostly filled by rich countries">
         <rect x="132" y="6" width="36" height="16" rx="4" fill="var(--soft)"/>
         <path d="M150 22 V44" stroke="var(--soft)" stroke-width="10" stroke-linecap="round"/>
         <path d="M20 60 H280 L250 245 H50 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="5" stroke-linejoin="round"/>
@@ -345,116 +320,117 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
         <path d="M33 140 H267" stroke="var(--card)" stroke-width="2"/>
         <text x="150" y="196" text-anchor="middle" font-size="19" font-weight="800" fill="#fff">rich countries</text>
         <text x="150" y="133" text-anchor="middle" font-size="15" font-weight="800" fill="#2a1f08">others</text>
-        <text x="150" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="var(--soft)">space left?</text>
+        <text x="150" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="var(--soft)">space left</text>
       </svg>
       <div>
-        <p class="t-lead">Everyone pours waste into one sink. It seemed endless. Rich countries filled most of it. Now it is nearly full.</p>
-        <div class="num"><div class="k">1</div><div><h3>Polluter pays</h3><p class="t-body soft">You broke it, you fix it.</p></div></div>
-        <div class="num"><div class="k">2</div><div><h3>Common but differentiated</h3><p class="t-body soft">A shared problem, but richer nations lead.</p></div></div>
-        <div class="num"><div class="k">3</div><div><h3>Right to develop</h3><p class="t-body soft">Poor countries still need room to grow.</p></div></div>
+        <span class="label">Singer’s sink analogy</span>
+        <p class="t-lead" style="margin:calc(var(--u)*.8) 0 calc(var(--u)*2.2)">The atmosphere is like a sink everyone shares. Rich countries have put most of the waste in it, and it is now almost full.</p>
+        <div class="num"><div class="k">1</div><div><h3>Polluter pays</h3><p class="t-body soft">Those who caused the problem should fix it first.</p></div></div>
+        <div class="num"><div class="k">2</div><div><h3>Common but differentiated responsibility</h3><p class="t-body soft">Every country shares the problem, but richer ones should lead.</p></div></div>
+        <div class="num"><div class="k">3</div><div><h3>Right to develop</h3><p class="t-body soft">Developing countries still need room to grow.</p></div></div>
       </div>
     </div>
   </div>
-  <div class="foot"><span>Singer borrows John Locke: take only if you leave "enough and as good" for others</span><span class="pg"></span></div>
+  <div class="foot"><span>Source: Singer, One World, ch. 2 (based on Locke: leave “enough and as good” for others)</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 7 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q5</i><span class="label">Beyond the readings</span></div>
-  <h2 class="t-title">AI is hungry for electricity</h2>
+  <div class="kicker"><i>Q5</i></div>
+  <h2 class="t-title">AI and energy use</h2>
   <div class="body">
     <div class="row" style="grid-template-columns:1fr 1.05fr;gap:calc(var(--u)*4.5);align-items:center">
       <div>
-        <div class="chart">
+        <span class="label">Data centre electricity use, worldwide</span>
+        <div class="chart" style="margin-top:calc(var(--u)*1.2)">
           <div class="col"><div class="v">415 <small>TWh</small></div><div class="b" style="height:40%;background:var(--sky)"></div></div>
           <div class="col"><div class="v">945 <small>TWh</small></div><div class="b" style="height:88%;background:var(--clay)"></div></div>
         </div>
-        <div class="yrs"><span>2024</span><span>2030, projected</span></div>
-        <p class="t-note" style="margin-top:calc(var(--u)*1.2)">Data centres worldwide. About 1.5% of all electricity in 2024, more than double by 2030. IEA, <i>Energy and AI</i> (2025)</p>
+        <div class="yrs"><span>2024</span><span>2030 (projected)</span></div>
+        <p class="t-note" style="margin-top:calc(var(--u)*1.2)">About 1.5% of world electricity in 2024; more than double by 2030, mainly due to AI. Source: IEA, <i>Energy and AI</i> (2025)</p>
       </div>
       <div>
-        <div class="issue"><i style="background:var(--clay)"></i><div><h3>Climate</h3><p class="t-body soft">New demand still met largely by fossil fuels.</p></div></div>
-        <div class="issue"><i style="background:var(--gold)"></i><div><h3>Local burden</h3><p class="t-body soft">Cooling water, strained grids, costs on residents.</p></div></div>
-        <div class="issue"><i style="background:var(--sky)"></i><div><h3>Fairness</h3><p class="t-body soft">Rich users benefit; poor regions bear the harm.</p></div></div>
-        <div class="issue"><i style="background:var(--forest-2)"></i><div><h3>Transparency</h3><p class="t-body soft">Energy per model is rarely disclosed.</p></div></div>
+        <span class="label" style="display:block;margin-bottom:calc(var(--u)*1.4)">Ethical issues</span>
+        <div class="issue"><i style="background:var(--clay)"></i><div><h3>Climate</h3><p class="t-body soft">Much of the new demand is still met by fossil fuels.</p></div></div>
+        <div class="issue"><i style="background:var(--gold)"></i><div><h3>Local burden</h3><p class="t-body soft">Cooling uses water, and nearby residents share the grid load.</p></div></div>
+        <div class="issue"><i style="background:var(--sky)"></i><div><h3>Fairness</h3><p class="t-body soft">Benefits and harms fall on different people (as in Q4).</p></div></div>
+        <div class="issue"><i style="background:var(--forest-2)"></i><div><h3>Transparency</h3><p class="t-body soft">Companies rarely disclose how much energy a model uses.</p></div></div>
       </div>
     </div>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Engineers and the Environment</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 8 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Examples</i><span class="label">From the textbook</span></div>
-  <h2 class="t-title">Two companies, opposite attitudes</h2>
+  <div class="kicker"><i>Examples</i></div>
+  <h2 class="t-title">Two examples from the text</h2>
   <div class="body">
     <div class="row c2 ex2">
       <div class="card g">
         <span class="pill p-f">Progressive</span>
-        <h3>3M · Pollution Prevention Pays</h3>
-        <div class="hero hl-f">$975M</div>
-        <p class="cap t-note">saved by 3P projects since 1975</p>
-        <ul class="dots t-body">
-          <li>$175M+ spent on solvent recycling</li>
-          <li>Air emissions down <b>93%</b>, 1990 to 2000</li>
-          <li>Plants <b>already met</b> EPA standards</li>
+        <h3>3M: Pollution Prevention Pays (3P)</h3>
+        <ul class="dots t-body" style="margin-top:calc(var(--u)*.8)">
+          <li>Saved <b>$975 million</b> through 3P projects since 1975</li>
+          <li>Spent over $175 million on equipment to recycle solvents</li>
+          <li>Cut volatile organic air emissions by <b>93%</b> (1990 to 2000)</li>
+          <li>Its plants <b>already met</b> EPA standards</li>
         </ul>
-        <p class="lesson t-body hl-f">Green and profitable can go together.</p>
+        <p class="lesson t-body">Environmental protection can also be profitable.</p>
       </div>
       <div class="card r">
         <span class="pill p-c">Sub-minimal</span>
-        <h3>Shady Chemical · engineer Vivian</h3>
-        <div class="hero hl-c">Same poison, new name</div>
-        <p class="cap t-note">Its pesticide is about to be banned as a carcinogen</p>
-        <ul class="dots t-body">
-          <li>Plan: a near-copy, changed just enough to dodge the ban</li>
-          <li>Vivian believes it is <b>just as dangerous</b></li>
+        <h3>Shady Chemical and engineer Vivian</h3>
+        <ul class="dots t-body" style="margin-top:calc(var(--u)*.8)">
+          <li>Its pesticide is about to be banned as a carcinogen</li>
+          <li>The company wants a substitute <b>as close to the old one as possible</b>, just different enough to avoid the ban</li>
+          <li>Vivian has good reason to think it is <b>just as dangerous</b></li>
         </ul>
-        <p class="lesson t-body hl-c">Breaks the degree-of-harm rule: a clear health threat must go, whatever the cost.</p>
+        <p class="lesson t-body">Violates the degree-of-harm criterion: a clear health threat must be removed, and cost is not a major factor.</p>
       </div>
     </div>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Source: Harris et al., ch. 9</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 9 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Case</i><span class="label">NSPE Board of Ethical Review · Case 21-2</span></div>
-  <h2 class="t-title">Plan for a climate that hasn't come yet?</h2>
+  <div class="kicker"><i>Case</i></div>
+  <h2 class="t-title">NSPE Case 21-2: climate change and public welfare</h2>
   <div class="body">
     <div class="case">
       <div class="story">
-        <div class="beat"><span class="label">The job</span><p class="t-body">An access road across a <b>tidal saltmarsh</b> for a new health care facility.</p></div>
-        <div class="beat"><span class="label">The rules</span><p class="t-body">Based on <b>past weather</b>. Nothing on sea level rise.</p></div>
-        <div class="beat"><span class="label">The worry</span><p class="t-body"><b>20 upstream homes</b> could flood 10+ years sooner. Engineer A proposes a flood study.</p></div>
-        <div class="beat x"><span class="label">The client</span><p>"Skip it, unless regulators ask."</p></div>
+        <div class="beat"><span class="label">Project</span><p class="t-body">Engineer A designs an access road across a tidal saltmarsh for a health care facility.</p></div>
+        <div class="beat"><span class="label">Regulations</span><p class="t-body">Local rules use past weather data only. Sea level rise is not considered.</p></div>
+        <div class="beat"><span class="label">Concern</span><p class="t-body">The project could make 20 upstream homes unlivable 10+ years sooner. A proposes a flood study.</p></div>
+        <div class="beat x"><span class="label">Client’s response</span><p>Skip the study unless regulators ask for it.</p></div>
       </div>
       <div class="panel ruling">
-        <span class="label">Board's ruling</span>
-        <p class="t-lead">Consider climate impacts on the public, even if no law requires it.</p>
-        <div class="stp"><span class="k">1</span><p>Talk to the client.</p></div>
-        <div class="stp"><span class="k">2</span><p>If refused, report the concern to regulators and the public.</p></div>
-        <div class="stp"><span class="k">3</span><p>If refused again, withdraw.</p></div>
-        <p class="t-note">NSPE Code I.1 · II.3.a · III.2.d</p>
+        <span class="label">Board’s conclusion</span>
+        <p class="t-lead">Engineer A must consider climate impacts on public welfare, even if the law does not require it.</p>
+        <div class="stp"><span class="k">1</span><p>Discuss the risks with the client.</p></div>
+        <div class="stp"><span class="k">2</span><p>If refused, include the concern in an engineering report for regulators and the public.</p></div>
+        <div class="stp"><span class="k">3</span><p>If refused again, withdraw from the project.</p></div>
+        <p class="t-note">NSPE Code I.1, II.3.a, III.2.d</p>
       </div>
     </div>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Source: NSPE Board of Ethical Review, Case 21-2</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 10 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Discussion</i><span class="label">Your turn</span></div>
-  <h2 class="t-title">Let's talk</h2>
+  <div class="kicker"><i>Discussion</i></div>
+  <h2 class="t-title">Discussion questions</h2>
   <div class="body">
     <div class="dq">
-      <div class="card"><div class="no">01</div><h3>Would you walk away?</h3><p class="t-body">The client says no. Do you quit? And who should pay to study a future that hasn't happened yet?</p></div>
-      <div class="card"><div class="no">02</div><h3>AI's energy bill</h3><p class="t-body">Should AI engineers limit or disclose energy use without a law? Which attitude do big AI firms show today?</p></div>
-      <div class="card"><div class="no">03</div><h3>Is Kyoto still fair?</h3><p class="t-body">China now emits the most. Should developing nations still have no targets? Count past emissions, or current?</p></div>
+      <div class="card"><span class="label hl-f">Question 1 · Case 21-2</span><p class="t-body">If you were Engineer A and the client refused, would you withdraw from the project? Who should pay for studying future climate risks: the client, the government, or the engineer?</p></div>
+      <div class="card"><span class="label hl-f">Question 2 · AI and energy</span><p class="t-body">Should AI engineers limit or disclose energy use even without a legal requirement? Which of the three attitudes do AI companies show today?</p></div>
+      <div class="card"><span class="label hl-f">Question 3 · Kyoto</span><p class="t-body">China is now the largest emitter. Is it still fair to give developing countries no targets? Should past or current emissions matter more?</p></div>
     </div>
-    <p class="src t-note">Sources · Harris, Pritchard &amp; Rabins, <i>Engineering Ethics</i> 4th ed., ch. 9 · Singer, <i>One World</i> (2002), ch. 2 · NSPE BER Case 21-2 · IEA, <i>Energy and AI</i> (2025)</p>
+    <p class="src t-note">References: Harris, Pritchard &amp; Rabins, <i>Engineering Ethics: Concepts and Cases</i> 4th ed., ch. 9 · Singer, <i>One World</i> (2002), ch. 2 · NSPE BER Case 21-2 · IEA, <i>Energy and AI</i> (2025)</p>
   </div>
-  <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
+  <div class="foot"><span>Engineers and the Environment</span><span class="pg"></span></div>
 </div></section>
 
 <div class="hud">
