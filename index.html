@@ -6,7 +6,7 @@
 <title>Engineers and the Environment</title>
 <style>
 :root{
-  --paper:#f5f2ea; --card:#fffdf8; --ink:#14251c; --soft:#56645b; --line:#ddd6c6;
+  --paper:#f5f2ea; --card:#fffdf8; --ink:#14251c; --soft:#5d6a62; --line:#ddd6c6;
   --forest:#1e5a3e; --forest-2:#2d7a55; --forest-tint:#e2efe5;
   --clay:#c0522c; --clay-tint:#f7e3d9; --gold:#b98522; --gold-tint:#f5ead2;
   --sky:#2b679d; --sky-tint:#e0ebf5;
@@ -30,135 +30,140 @@
 html,body{margin:0;height:100%}
 body{background:var(--paper);color:var(--ink);overflow:hidden;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
-  -webkit-font-smoothing:antialiased;font-size:calc(var(--u)*1.6);line-height:1.45}
+  -webkit-font-smoothing:antialiased;font-size:calc(var(--u)*1.6);line-height:1.5}
 b,strong{font-weight:700}
+p{margin:0}
+
+/* ---------- type scale: 4 sizes only ---------- */
+.t-title{font-size:calc(var(--u)*3.4);line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.t-lead{font-size:calc(var(--u)*2);line-height:1.35;font-weight:600;letter-spacing:-.01em}
+.t-body{font-size:calc(var(--u)*1.55);line-height:1.5}
+.t-note{font-size:calc(var(--u)*1.1);line-height:1.45;color:var(--soft)}
+.label{font-size:calc(var(--u)*.9);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+h2{margin:calc(var(--u)*.5) 0 calc(var(--u)*2.4)}
+h3{font-size:calc(var(--u)*1.7);line-height:1.25;margin:0 0 calc(var(--u)*.5);font-weight:750;letter-spacing:-.01em}
+.soft{color:var(--soft)}
 
 /* ---------- stage ---------- */
 .slide{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--paper);
   opacity:0;visibility:hidden;transition:opacity .35s ease, visibility .35s}
 .slide.on{opacity:1;visibility:visible}
-.frame{width:calc(var(--u)*100);height:calc(var(--u)*56.25);padding:calc(var(--u)*4.2) calc(var(--u)*5.4) calc(var(--u)*3.2);
+.frame{width:calc(var(--u)*100);height:calc(var(--u)*56.25);padding:calc(var(--u)*4.2) calc(var(--u)*5.6) calc(var(--u)*3.2);
   display:flex;flex-direction:column;position:relative}
 .body{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
-.kicker{font-size:calc(var(--u)*1.05);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-2);
-  display:flex;align-items:center;gap:calc(var(--u)*.8)}
-.kicker i{font-style:normal;background:var(--forest);color:var(--paper);border-radius:calc(var(--u)*.4);padding:calc(var(--u)*.15) calc(var(--u)*.6)}
-h2{font-size:calc(var(--u)*3.5);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin:calc(var(--u)*.6) 0 calc(var(--u)*2.2)}
-h3{font-size:calc(var(--u)*1.75);line-height:1.2;margin:0 0 calc(var(--u)*.6);font-weight:750;letter-spacing:-.01em}
-p{margin:0 0 calc(var(--u)*.7)}
-.soft{color:var(--soft)}
+.kicker{display:flex;align-items:center;gap:calc(var(--u)*.9)}
+.kicker i{font-style:normal;font-size:calc(var(--u)*.95);font-weight:800;letter-spacing:.08em;background:var(--forest);color:var(--paper);border-radius:calc(var(--u)*.4);padding:calc(var(--u)*.15) calc(var(--u)*.65)}
 .foot{display:flex;justify-content:space-between;font-size:calc(var(--u)*.9);color:var(--soft);border-top:1px solid var(--line);padding-top:calc(var(--u)*.9);margin-top:calc(var(--u)*1.6)}
+
+/* ---------- blocks ---------- */
 .row{display:grid;gap:calc(var(--u)*1.8)}
 .c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:calc(var(--u)*1.1);padding:calc(var(--u)*1.8) calc(var(--u)*2)}
-.pill{display:inline-block;align-self:flex-start;font-size:calc(var(--u)*.95);font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:calc(var(--u)*.25) calc(var(--u)*.9);margin-bottom:calc(var(--u)*.9)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:calc(var(--u)*1.1);padding:calc(var(--u)*1.9) calc(var(--u)*2.1)}
+.card .label{display:block;margin-bottom:calc(var(--u)*.8)}
+.pill{display:inline-block;align-self:flex-start;font-size:calc(var(--u)*.9);font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:99px;padding:calc(var(--u)*.25) calc(var(--u)*.9);margin-bottom:calc(var(--u)*1)}
 .p-f{background:var(--forest-tint);color:var(--forest-2)}.p-c{background:var(--clay-tint);color:var(--clay)}
 .p-g{background:var(--gold-tint);color:var(--gold)}.p-s{background:var(--sky-tint);color:var(--sky)}
-.hl-f{color:var(--forest-2)}.hl-c{color:var(--clay)}.hl-s{color:var(--sky)}
+.hl-f{color:var(--forest-2)}.hl-c{color:var(--clay)}.hl-g{color:var(--gold)}.hl-s{color:var(--sky)}
+.panel{background:var(--forest);color:var(--paper);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*2.2) calc(var(--u)*2.4)}
+.panel .label{color:var(--paper);opacity:.7}
 ul.dots{list-style:none;margin:0;padding:0}
-ul.dots li{position:relative;padding-left:calc(var(--u)*1.6);margin:0 0 calc(var(--u)*.8)}
-ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(--u)*.6);height:calc(var(--u)*.6);border-radius:50%;background:currentColor;opacity:.45}
+ul.dots li{position:relative;padding-left:calc(var(--u)*1.5);margin:0 0 calc(var(--u)*.55)}
+ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(--u)*.5);height:calc(var(--u)*.5);border-radius:50%;background:currentColor;opacity:.4}
+.num{display:grid;grid-template-columns:calc(var(--u)*3.2) 1fr;gap:calc(var(--u)*1.3);align-items:start;margin-bottom:calc(var(--u)*1.6)}
+.num:last-child{margin-bottom:0}
+.num .k{width:calc(var(--u)*3.2);height:calc(var(--u)*3.2);border-radius:50%;background:var(--forest);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:calc(var(--u)*1.4)}
+.num h3{margin-bottom:calc(var(--u)*.2)}
 
 /* ---------- 1 title ---------- */
 .s-title{background:#163f2c;color:#f3efe4}
 .s-title .frame{justify-content:space-between}
-.s-title .kicker{color:#a9d7b8}
 .s-title .kicker i{background:#a9d7b8;color:#163f2c}
-.s-title h1{font-size:calc(var(--u)*6.2);line-height:1;letter-spacing:-.035em;margin:calc(var(--u)*1.2) 0 0;font-weight:850;max-width:12ch}
-.s-title .who{font-size:calc(var(--u)*1.5);color:#c9d8cc;margin-top:calc(var(--u)*1.6)}
-.s-title .bigq{display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*2);align-items:center;border-top:1px solid rgba(243,239,228,.25);padding-top:calc(var(--u)*2)}
-.s-title .bigq span{font-size:calc(var(--u)*1);font-weight:800;letter-spacing:.14em;color:#a9d7b8;text-transform:uppercase}
-.s-title .bigq p{font-size:calc(var(--u)*2.5);font-weight:700;line-height:1.2;margin:0;letter-spacing:-.01em}
-.s-title .orb{position:absolute;right:calc(var(--u)*-6);top:calc(var(--u)*-8);width:calc(var(--u)*46);opacity:.9;pointer-events:none}
-:root[data-theme] .s-title, .s-title{background:#163f2c}
+.s-title .kicker .label{color:#a9d7b8}
+.s-title h1{font-size:calc(var(--u)*6.4);line-height:1;letter-spacing:-.035em;margin:calc(var(--u)*1.4) 0 0;font-weight:850;max-width:12ch}
+.s-title .who{font-size:calc(var(--u)*1.5);color:#c9d8cc;margin-top:calc(var(--u)*1.8)}
+.s-title .bigq{display:grid;grid-template-columns:auto 1fr;gap:calc(var(--u)*2.4);align-items:center;border-top:1px solid rgba(243,239,228,.25);padding-top:calc(var(--u)*2)}
+.s-title .bigq .label{color:#a9d7b8}
+.s-title .bigq p{font-size:calc(var(--u)*2.4);font-weight:700;line-height:1.25;letter-spacing:-.01em;max-width:30ch}
+.s-title .orb{position:absolute;right:calc(var(--u)*-6);top:calc(var(--u)*-8);width:calc(var(--u)*46);pointer-events:none}
 
-/* ---------- 2 sustainable ---------- */
-.def{font-size:calc(var(--u)*2.15);line-height:1.35;font-weight:600;letter-spacing:-.01em;border-left:calc(var(--u)*.5) solid var(--forest-2);padding-left:calc(var(--u)*2)}
-.def small{display:block;font-size:calc(var(--u)*1);color:var(--soft);font-weight:600;margin-top:calc(var(--u)*.8)}
-.short{background:var(--forest);color:var(--paper);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*2.2);display:flex;flex-direction:column;justify-content:center}
-.short span{font-size:calc(var(--u)*1);font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.short p{font-size:calc(var(--u)*2.4);font-weight:750;line-height:1.2;margin:calc(var(--u)*.8) 0 0}
+/* ---------- 2 definition ---------- */
+.def{border-left:calc(var(--u)*.5) solid var(--forest-2);padding-left:calc(var(--u)*2)}
+.def .t-note{margin-top:calc(var(--u)*.9)}
+.panel.short{display:flex;flex-direction:column;justify-content:center}
+.panel.short p{font-size:calc(var(--u)*2.2);font-weight:750;line-height:1.25;margin-top:calc(var(--u)*.7)}
 
 /* ---------- 3 attitudes ---------- */
-.att{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*1.8);position:relative}
-.lvl{height:calc(var(--u)*8.5);position:relative;border-bottom:2px solid var(--line);margin-bottom:calc(var(--u)*1.4)}
+.att{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*2.2)}
+.lvl{height:calc(var(--u)*8.5);position:relative;border-bottom:2px solid var(--line);margin-bottom:calc(var(--u)*1.5)}
 .lvl .bar{position:absolute;bottom:0;left:0;right:0;border-radius:calc(var(--u)*.6) calc(var(--u)*.6) 0 0}
-.lvl .law{position:absolute;left:calc(var(--u)*-1);right:calc(var(--u)*-1);bottom:calc(var(--u)*5);border-top:2px dashed var(--ink);opacity:.55}
-.lvl .law b{position:absolute;left:calc(var(--u)*1);top:calc(var(--u)*-1.7);font-size:calc(var(--u)*.85);letter-spacing:.12em;opacity:.9}
-.att .quote{font-size:calc(var(--u)*1.55);font-weight:750;margin-top:calc(var(--u)*.6)}
-.why{margin-top:calc(var(--u)*2);display:flex;gap:calc(var(--u)*1.2);align-items:center;font-size:calc(var(--u)*1.35)}
-.why b{white-space:nowrap}
-.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:calc(var(--u)*.4) calc(var(--u)*1.2)}
+.lvl .law{position:absolute;left:calc(var(--u)*-1.1);right:calc(var(--u)*-1.1);bottom:calc(var(--u)*5);border-top:2px dashed var(--ink);opacity:.55}
+.lvl .law b{position:absolute;left:calc(var(--u)*1.1);top:calc(var(--u)*-1.7);font-size:calc(var(--u)*.85);letter-spacing:.12em;text-transform:uppercase}
+.att h3{margin-top:calc(var(--u)*.2)}
+.att .say{font-size:calc(var(--u)*1.5);font-weight:750;margin-top:calc(var(--u)*.8)}
+.why{margin-top:calc(var(--u)*2.4);display:flex;gap:calc(var(--u)*1);align-items:center;flex-wrap:wrap}
+.why .label{margin-right:calc(var(--u)*.4)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:calc(var(--u)*.35) calc(var(--u)*1.2);font-size:calc(var(--u)*1.3)}
 
-/* ---------- 3 anthropo ---------- */
+/* ---------- 4 anthropocentric ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;border-radius:calc(var(--u)*1.2);overflow:hidden;border:1px solid var(--line)}
 .split > div{padding:calc(var(--u)*2.2) calc(var(--u)*2.4)}
 .split .a{background:var(--sky-tint)}.split .n{background:var(--forest-tint)}
-.split .ico{width:calc(var(--u)*4);height:calc(var(--u)*4);margin-bottom:calc(var(--u)*1)}
-.split .big{font-size:calc(var(--u)*2.1);font-weight:800;line-height:1.15;margin-bottom:calc(var(--u)*.8)}
-.split .ex{font-size:calc(var(--u)*1.35);color:var(--soft);margin-top:calc(var(--u)*1)}
+.split .ico{width:calc(var(--u)*3.6);height:calc(var(--u)*3.6);margin-bottom:calc(var(--u)*.8)}
+.split .t-lead{margin:0 0 calc(var(--u)*.6)}
+.split .t-note{margin-top:calc(var(--u)*1)}
 
 /* ---------- 5 kyoto ---------- */
-.stat .n{font-size:calc(var(--u)*5.6);font-weight:850;letter-spacing:-.03em;line-height:1;color:var(--sky)}
-.stat .l{font-size:calc(var(--u)*1.4);margin-top:calc(var(--u)*.8)}
+.stat .n{font-size:calc(var(--u)*5.4);font-weight:850;letter-spacing:-.03em;line-height:1;color:var(--sky)}
+.stat .l{margin-top:calc(var(--u)*.7)}
 .vsrow{display:grid;grid-template-columns:1fr auto 1fr;gap:calc(var(--u)*1.6);align-items:stretch;margin-top:calc(var(--u)*2.4)}
-.vsrow .mid{align-self:center;font-weight:850;font-size:calc(var(--u)*1.4);color:var(--soft)}
+.vsrow .mid{align-self:center;font-weight:850;font-size:calc(var(--u)*1.3);color:var(--soft)}
 
 /* ---------- 6 sink ---------- */
-.sinkwrap{display:grid;grid-template-columns:calc(var(--u)*30) 1fr;gap:calc(var(--u)*3.5);align-items:center}
+.sinkwrap{display:grid;grid-template-columns:calc(var(--u)*28) 1fr;gap:calc(var(--u)*4);align-items:center}
 .sinkwrap svg{width:100%;height:auto}
-.reason{display:grid;grid-template-columns:calc(var(--u)*3.6) 1fr;gap:calc(var(--u)*1.2);align-items:start;margin-bottom:calc(var(--u)*1.8)}
-.reason .k{width:calc(var(--u)*3.6);height:calc(var(--u)*3.6);border-radius:50%;background:var(--forest);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:850;font-size:calc(var(--u)*1.6)}
-.reason h3{margin-bottom:calc(var(--u)*.3)}
-.reason p{margin:0;color:var(--soft)}
+.sinkwrap .t-lead{margin-bottom:calc(var(--u)*2.2);max-width:34ch}
 
 /* ---------- 7 AI ---------- */
-.chart{display:flex;align-items:flex-end;gap:calc(var(--u)*2.6);height:calc(var(--u)*22);border-bottom:2px solid var(--line);padding:0 calc(var(--u)*1)}
+.chart{display:flex;align-items:flex-end;gap:calc(var(--u)*2.6);height:calc(var(--u)*21);border-bottom:2px solid var(--line);padding:0 calc(var(--u)*1)}
 .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
 .col .v{font-size:calc(var(--u)*2.2);font-weight:850;letter-spacing:-.02em;margin-bottom:calc(var(--u)*.6)}
 .col .v small{font-size:calc(var(--u)*1);font-weight:700;color:var(--soft)}
 .col .b{width:100%;border-radius:calc(var(--u)*.8) calc(var(--u)*.8) 0 0}
 .yrs{display:flex;gap:calc(var(--u)*2.6);padding:calc(var(--u)*.8) calc(var(--u)*1) 0}
 .yrs span{flex:1;text-align:center;font-weight:800;font-size:calc(var(--u)*1.3)}
-.x2{position:absolute;font-weight:850;color:var(--clay);font-size:calc(var(--u)*1.6)}
-.issue{display:grid;grid-template-columns:calc(var(--u)*.55) 1fr;gap:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.5)}
+.issue{display:grid;grid-template-columns:calc(var(--u)*.55) 1fr;gap:calc(var(--u)*1.4);margin-bottom:calc(var(--u)*1.6)}
+.issue:last-child{margin-bottom:0}
 .issue i{border-radius:99px}
-.issue h3{font-size:calc(var(--u)*1.55);margin-bottom:calc(var(--u)*.2)}
-.issue p{margin:0;color:var(--soft);font-size:calc(var(--u)*1.35)}
+.issue h3{margin-bottom:calc(var(--u)*.15)}
 
 /* ---------- 8 examples ---------- */
-.ex2 .card{padding:calc(var(--u)*2.2) calc(var(--u)*2.4);display:flex;flex-direction:column}
+.ex2 .card{display:flex;flex-direction:column;padding:calc(var(--u)*2.2) calc(var(--u)*2.4)}
 .ex2 .g{border-top:calc(var(--u)*.55) solid var(--forest-2)}.ex2 .r{border-top:calc(var(--u)*.55) solid var(--clay)}
-.ex2 .hero{font-size:calc(var(--u)*4);font-weight:850;letter-spacing:-.03em;line-height:1;margin:calc(var(--u)*.4) 0 calc(var(--u)*.4)}
-.ex2 .cap{color:var(--soft);font-size:calc(var(--u)*1.25);margin-bottom:calc(var(--u)*1.4)}
-.ex2 ul{font-size:calc(var(--u)*1.4)}
-.ex2 .lesson{margin-top:auto;padding-top:calc(var(--u)*1.2);border-top:1px solid var(--line);font-weight:700;font-size:calc(var(--u)*1.4)}
+.ex2 .hero{font-size:calc(var(--u)*3.8);font-weight:850;letter-spacing:-.03em;line-height:1.05;margin:calc(var(--u)*.4) 0 calc(var(--u)*.5)}
+.ex2 .cap{margin-bottom:calc(var(--u)*1.5)}
+.ex2 .lesson{margin-top:auto;padding-top:calc(var(--u)*1.2);border-top:1px solid var(--line);font-weight:700}
 
 /* ---------- 9 case ---------- */
-.case{display:grid;grid-template-columns:1.15fr 1fr;gap:calc(var(--u)*3)}
+.case{display:grid;grid-template-columns:1.1fr 1fr;gap:calc(var(--u)*3.2)}
 .story{border-left:2px solid var(--line);margin-left:calc(var(--u)*.6)}
-.beat{position:relative;padding:0 0 calc(var(--u)*1.5) calc(var(--u)*2.2)}
-.beat::before{content:"";position:absolute;left:calc(var(--u)*-.75);top:calc(var(--u)*.4);width:calc(var(--u)*1.3);height:calc(var(--u)*1.3);border-radius:50%;background:var(--paper);border:3px solid var(--sky)}
+.beat{position:relative;padding:0 0 calc(var(--u)*1.7) calc(var(--u)*2.2)}
+.beat:last-child{padding-bottom:0}
+.beat::before{content:"";position:absolute;left:calc(var(--u)*-.75);top:calc(var(--u)*.35);width:calc(var(--u)*1.3);height:calc(var(--u)*1.3);border-radius:50%;background:var(--paper);border:3px solid var(--sky)}
 .beat.x::before{border-color:var(--clay);background:var(--clay)}
-.beat span{font-size:calc(var(--u)*.95);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
-.beat p{margin:calc(var(--u)*.2) 0 0;font-size:calc(var(--u)*1.45)}
-.beat.x p{font-weight:750;color:var(--clay);font-size:calc(var(--u)*1.7)}
-.ruling{background:var(--forest);color:var(--paper);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*2.2)}
-.ruling .t{font-size:calc(var(--u)*.95);font-weight:800;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
-.ruling .m{font-size:calc(var(--u)*1.9);font-weight:750;line-height:1.25;margin:calc(var(--u)*.6) 0 calc(var(--u)*1.6)}
-.stp{display:grid;grid-template-columns:calc(var(--u)*2.6) 1fr;gap:calc(var(--u)*1);align-items:start;margin-bottom:calc(var(--u)*1)}
-.stp .k{width:calc(var(--u)*2.6);height:calc(var(--u)*2.6);border-radius:50%;background:var(--paper);color:var(--forest);display:flex;align-items:center;justify-content:center;font-size:calc(var(--u)*1.2)}
-.stp p{margin:0;font-size:calc(var(--u)*1.35);line-height:1.35}
-.code{font-size:calc(var(--u)*1.05);opacity:.8;margin-top:calc(var(--u)*1.2)}
+.beat p{margin-top:calc(var(--u)*.2)}
+.beat.x p{font-weight:750;color:var(--clay);font-size:calc(var(--u)*1.75)}
+.ruling .t-lead{margin:calc(var(--u)*.6) 0 calc(var(--u)*1.6)}
+.stp{display:grid;grid-template-columns:calc(var(--u)*2.4) 1fr;gap:calc(var(--u)*1);align-items:start;margin-bottom:calc(var(--u)*.9)}
+.stp .k{width:calc(var(--u)*2.4);height:calc(var(--u)*2.4);border-radius:50%;background:var(--paper);color:var(--forest);display:flex;align-items:center;justify-content:center;font-size:calc(var(--u)*1.1);font-weight:800}
+.stp p{line-height:1.4;font-size:calc(var(--u)*1.4)}
+.ruling .t-note{color:var(--paper);opacity:.7;margin-top:calc(var(--u)*1.2)}
 
-/* ---------- 10 discuss ---------- */
-.dq{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*1.8)}
-.dq .card{display:flex;flex-direction:column;padding:calc(var(--u)*2.2)}
-.dq .no{font-size:calc(var(--u)*4.2);font-weight:850;line-height:1;color:var(--forest-2);letter-spacing:-.03em}
-.dq h3{margin:calc(var(--u)*1) 0 calc(var(--u)*.8)}
-.dq p{font-size:calc(var(--u)*1.6);margin:0;line-height:1.4}
-.dq h3{font-size:calc(var(--u)*2.1)}
-.src{font-size:calc(var(--u)*.9);color:var(--soft);margin-top:calc(var(--u)*1.8);line-height:1.5}
+/* ---------- 10 discussion ---------- */
+.dq{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*2)}
+.dq .card{display:flex;flex-direction:column;padding:calc(var(--u)*2.4)}
+.dq .no{font-size:calc(var(--u)*4);font-weight:850;line-height:1;color:var(--forest-2);letter-spacing:-.03em}
+.dq h3{margin:calc(var(--u)*1.2) 0 calc(var(--u)*.8)}
+.src{margin-top:calc(var(--u)*2.2)}
 
 /* ---------- chrome ---------- */
 .progress{position:fixed;left:0;top:0;height:calc(var(--u)*.35);min-height:3px;background:var(--clay);z-index:10;transition:width .35s ease}
@@ -173,21 +178,20 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
   body{overflow:auto;font-size:calc(var(--u)*1.75)}
   .slide{position:static;opacity:1;visibility:visible;display:block;border-bottom:1px solid var(--line)}
   .frame{width:auto;height:auto;padding:calc(var(--u)*9) calc(var(--u)*6) calc(var(--u)*7)}
-  .row,.row.c2,.row.c3,.row.c4,.att,.split,.sinkwrap,.case,.dq,.vsrow{grid-template-columns:1fr!important}
-  .kicker{flex-wrap:wrap}.kicker i{white-space:nowrap}
+  .row,.att,.split,.sinkwrap,.case,.dq,.vsrow{grid-template-columns:1fr!important}
   .vsrow .mid{justify-self:center}
   .sinkwrap svg{max-width:70%}
-  h2{font-size:calc(var(--u)*3.1);overflow-wrap:break-word}
-  .why{flex-wrap:wrap}.why b{width:100%}
+  .t-title{font-size:calc(var(--u)*3.1);overflow-wrap:break-word}
   .s-title h1{font-size:calc(var(--u)*4.6);max-width:none}
   .s-title .frame{min-height:calc(var(--u)*115);gap:calc(var(--u)*6)}
   .s-title .bigq{grid-template-columns:1fr}
   .s-title .orb{width:calc(var(--u)*60);right:calc(var(--u)*-20);top:calc(var(--u)*-14)}
-  .foot{display:none}
-  .hud .nav,.progress{display:none}
+  .s-title{overflow:hidden;position:relative}
+  .kicker{flex-wrap:wrap}
+  .foot,.hud .nav,.progress{display:none}
   .hud{opacity:1}
   .chart{height:calc(var(--u)*30)}
-  .s-title{overflow:hidden;position:relative}
+  .why .label{width:100%}
 }
 @media print{
   body{overflow:visible}
@@ -213,28 +217,31 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
     <path d="M200 135 L200 280" stroke="#a9d7b8" stroke-opacity=".35" stroke-width="3"/>
   </svg>
   <div>
-    <div class="kicker"><i>Group Study 2</i> Environment · Group 7E</div>
+    <div class="kicker"><i>Group Study 2</i><span class="label">Environment · Group 7E</span></div>
     <h1>Engineers and the Environment</h1>
     <div class="who">한태영 · Engineering Ethics · Oct. 26, 2026</div>
   </div>
   <div class="bigq">
-    <span>Big question</span>
-    <p>Engineers pollute the land, air and rivers. Engineers also clean them up. So what do we owe the environment?</p>
+    <span class="label">Big question</span>
+    <p>Engineers both pollute and clean up. What do we owe the environment?</p>
   </div>
 </div></section>
 
 <!-- 2 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q1</i> Sustainable development</div>
-  <h2>Use it, but leave enough</h2>
+  <div class="kicker"><i>Q1</i><span class="label">Sustainable development</span></div>
+  <h2 class="t-title">Use it, but leave enough</h2>
   <div class="body">
-    <div class="row" style="grid-template-columns:1.35fr 1fr;align-items:stretch">
-      <div class="def">Meet <b class="hl-f">present needs</b> without hurting nature's capacity to absorb our impact, and without hurting <b class="hl-f">future generations'</b> ability to meet their own needs.<small>ASCE definition, Harris ch. 9</small></div>
-      <div class="short"><span>In one line</span><p>Don't use up what nature and our grandchildren will need.</p></div>
+    <div class="row" style="grid-template-columns:1.35fr 1fr">
+      <div class="def">
+        <p class="t-lead">Meeting <span class="hl-f">present needs</span> without harming nature's capacity to absorb our impact, or <span class="hl-f">future generations'</span> ability to meet their own needs.</p>
+        <p class="t-note">ASCE definition, Harris ch. 9</p>
+      </div>
+      <div class="panel short"><span class="label">In one line</span><p>Don't use up what nature and our grandchildren will need.</p></div>
     </div>
-    <div class="row c2" style="margin-top:calc(var(--u)*2.4)">
-      <div class="card"><span class="pill p-f">Why it matters</span><p style="margin:0">Codes now look past today's client to <b>nature and future people</b>. NSPE III.2.d and ASCE both name it.</p></div>
-      <div class="card"><span class="pill p-g">Its limit</span><p style="margin:0">Codes say engineers "<b>should strive to</b>" follow it. A recommendation, not a duty, so it is hard to enforce.</p></div>
+    <div class="row c2" style="margin-top:calc(var(--u)*2.2)">
+      <div class="card"><span class="label hl-f">Why it matters</span><p class="t-body">Codes now reach past today's client to <b>nature and future people</b>. NSPE III.2.d and ASCE both name it.</p></div>
+      <div class="card"><span class="label hl-g">Its limit</span><p class="t-body">Engineers "<b>should strive to</b>" comply. A recommendation, not a duty.</p></div>
     </div>
   </div>
   <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
@@ -242,61 +249,61 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 3 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q2</i> Petulla, 1987</div>
-  <h2>Three attitudes, measured against the law</h2>
+  <div class="kicker"><i>Q2</i><span class="label">Three attitudes · Petulla, 1987</span></div>
+  <h2 class="t-title">Where does a company stand against the law?</h2>
   <div class="body">
     <div class="att">
       <div>
-        <div class="lvl"><div class="bar" style="height:30%;background:var(--clay)"></div><div class="law"><b>THE LAW</b></div></div>
+        <div class="lvl"><div class="bar" style="height:30%;background:var(--clay)"></div><div class="law"><b>The law</b></div></div>
         <span class="pill p-c">Sub-minimal</span>
         <h3>Below the law</h3>
-        <p class="soft">Do as little as possible. If the fine is cheaper than the fix, pay the fine.</p>
-        <div class="quote hl-c">"Break it if it pays."</div>
+        <p class="t-body soft">Do the least. If the fine is cheaper than the fix, pay the fine.</p>
+        <p class="say hl-c">"Break it if it pays."</p>
       </div>
       <div>
         <div class="lvl"><div class="bar" style="height:59%;background:var(--gold)"></div><div class="law"></div></div>
-        <span class="pill p-g">Minimalist · compliance</span>
+        <span class="pill p-g">Minimalist</span>
         <h3>Exactly the law</h3>
-        <p class="soft">Follow the rules, often without enthusiasm. Regulation is a cost of doing business.</p>
-        <div class="quote" style="color:var(--gold)">"Only what's required."</div>
+        <p class="t-body soft">Comply, no more. Regulation is a cost of doing business.</p>
+        <p class="say hl-g">"Only what's required."</p>
       </div>
       <div>
         <div class="lvl"><div class="bar" style="height:100%;background:var(--forest-2)"></div><div class="law"></div></div>
         <span class="pill p-f">Progressive</span>
         <h3>Beyond the law</h3>
-        <p class="soft">The CEO backs it. Good long term, and some firms truly care.</p>
-        <div class="quote hl-f">"More than asked."</div>
+        <p class="t-body soft">Backed by the CEO. Pays off long term, and some truly care.</p>
+        <p class="say hl-f">"More than asked."</p>
       </div>
     </div>
-    <div class="why"><b>Why go beyond?</b><span class="chip">Self-interest</span><span class="chip">Human well-being</span><span class="chip">Respect for nature itself</span></div>
+    <div class="why"><span class="label">Why go beyond</span><span class="chip">Self-interest</span><span class="chip">Human well-being</span><span class="chip">Respect for nature</span></div>
   </div>
   <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
 </div></section>
 
 <!-- 4 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q3</i> Who has value?</div>
-  <h2>Anthropocentric vs. non-anthropocentric</h2>
+  <div class="kicker"><i>Q3</i><span class="label">Two views of nature</span></div>
+  <h2 class="t-title">Anthropocentric vs. non-anthropocentric</h2>
   <div class="body">
     <div class="split">
       <div class="a">
         <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="14" r="8" fill="var(--sky)"/><path d="M8 44c0-10 7-16 16-16s16 6 16 16" fill="var(--sky)"/></svg>
         <span class="pill p-s">Anthropocentric · 인간중심</span>
-        <div class="big">Only humans have value in themselves.</div>
-        <p>Nature is <b>instrumental</b>: it matters because it is useful to us.</p>
-        <div class="ex">Save the forest? For wood, clean air and recreation.</div>
+        <p class="t-lead">Only humans have value in themselves.</p>
+        <p class="t-body">Nature matters because it is <b>useful</b> to us.</p>
+        <p class="t-note">Save the forest for wood, clean air and recreation.</p>
       </div>
       <div class="n">
         <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 L38 28 H10 Z" fill="var(--forest-2)"/><path d="M24 14 L40 38 H8 Z" fill="var(--forest-2)" opacity=".75"/><rect x="21" y="38" width="6" height="8" fill="var(--forest-2)"/></svg>
         <span class="pill p-f">Non-anthropocentric · 비인간중심</span>
-        <div class="big">Nature has value in itself, too.</div>
-        <p>Some natural things have <b>intrinsic</b> value.</p>
-        <div class="ex">Save the forest? Because the forest deserves respect.</div>
+        <p class="t-lead">Nature has value in itself, too.</p>
+        <p class="t-body">Some natural things matter <b>on their own</b>.</p>
+        <p class="t-note">Save the forest because it deserves respect.</p>
       </div>
     </div>
     <div class="row c2" style="margin-top:calc(var(--u)*1.8)">
-      <div class="card"><h3>Aldo Leopold: "land ethic"</h3><p style="margin:0" class="soft">We are members of one "biotic community" with soil, water, plants and animals. Right = keeping it whole, stable and beautiful.</p></div>
-      <div class="card"><h3>Textbook: a "modified" view</h3><p style="margin:0" class="soft">Respect nature for its own sake, <b style="color:var(--ink)">but</b> a big enough human good can justify harm. Blind salamanders vs. many human lives.</p></div>
+      <div class="card"><span class="label hl-f">Aldo Leopold · land ethic</span><p class="t-body">We belong to one <b>biotic community</b> with soil, water, plants and animals.</p></div>
+      <div class="card"><span class="label hl-f">The textbook · a modified view</span><p class="t-body">Respect nature for its own sake, <b>but</b> a large human good can justify harm. Blind salamanders vs. human lives.</p></div>
     </div>
   </div>
   <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
@@ -304,20 +311,20 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 5 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q4</i> Singer, "One Atmosphere"</div>
-  <h2>The Kyoto Protocol in four numbers</h2>
+  <div class="kicker"><i>Q4</i><span class="label">What it is · Singer, "One Atmosphere"</span></div>
+  <h2 class="t-title">The Kyoto Protocol in four numbers</h2>
   <div class="body">
     <div class="row c4">
-      <div class="stat"><div class="n">1997</div><div class="l">Signed under the UN climate convention from Rio (1992)</div></div>
-      <div class="stat"><div class="n">39</div><div class="l">Developed nations given targets</div></div>
-      <div class="stat"><div class="n">−5%</div><div class="l">Below 1990 levels by 2012 (EU 8%, US 7%)</div></div>
-      <div class="stat"><div class="n" style="color:var(--clay)">0</div><div class="l">Targets for developing nations</div></div>
+      <div class="stat"><div class="n">1997</div><p class="l t-body">Signed under the UN climate convention (Rio, 1992)</p></div>
+      <div class="stat"><div class="n">39</div><p class="l t-body">Developed nations with targets</p></div>
+      <div class="stat"><div class="n">−5%</div><p class="l t-body">Below 1990 levels by 2012</p></div>
+      <div class="stat"><div class="n hl-c">0</div><p class="l t-body">Targets for developing nations</p></div>
     </div>
-    <p class="soft" style="margin-top:calc(var(--u)*1.6)">Plus <b style="color:var(--ink)">emissions trading</b>: a country can buy credits from one with some to spare.</p>
+    <p class="t-body soft" style="margin-top:calc(var(--u)*1.8)"><b style="color:var(--ink)">Emissions trading:</b> buy credits from a country with some to spare.</p>
     <div class="vsrow">
-      <div class="card"><span class="pill p-c">Criticism</span><p style="margin:0"><b>Bush (2000):</b> unfair, China and India were exempt. <b>Lomborg:</b> too costly for a small effect.</p></div>
+      <div class="card"><span class="label hl-c">Criticism</span><p class="t-body"><b>Bush:</b> unfair, China and India exempt.<br><b>Lomborg:</b> high cost, small effect.</p></div>
       <div class="mid">vs</div>
-      <div class="card"><span class="pill p-f">Singer's reply</span><p style="margin:0">Kyoto is <b>not the solution but the first step</b>, a platform to bring developing nations in later.</p></div>
+      <div class="card"><span class="label hl-f">Singer's reply</span><p class="t-body">Not the solution, <b>the first step</b>. A platform to bring developing nations in.</p></div>
     </div>
   </div>
   <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
@@ -325,8 +332,8 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 6 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q4</i> Why is it rather fair?</div>
-  <h2>The sky is one shared sink</h2>
+  <div class="kicker"><i>Q4</i><span class="label">Why it is rather fair</span></div>
+  <h2 class="t-title">The sky is one shared sink</h2>
   <div class="body">
     <div class="sinkwrap">
       <svg viewBox="0 0 300 260" role="img" aria-label="A shared sink, mostly filled by rich countries">
@@ -341,10 +348,10 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
         <text x="150" y="92" text-anchor="middle" font-size="15" font-weight="700" fill="var(--soft)">space left?</text>
       </svg>
       <div>
-        <p style="font-size:calc(var(--u)*1.75);font-weight:600;line-height:1.35;margin-bottom:calc(var(--u)*2.2)">Everyone pours waste into the same sink. It looked endless, so nobody worried. Rich countries poured in most of it. Now it is nearly full.</p>
-        <div class="reason"><div class="k">1</div><div><h3>Polluter pays</h3><p>"You broke it, you fix it." Who filled the sink should clean first.</p></div></div>
-        <div class="reason"><div class="k">2</div><div><h3>Common but differentiated</h3><p>Everyone shares the problem; richer, more responsible nations lead.</p></div></div>
-        <div class="reason" style="margin:0"><div class="k">3</div><div><h3>Right to develop</h3><p>Poor countries still need room to grow out of poverty.</p></div></div>
+        <p class="t-lead">Everyone pours waste into one sink. It seemed endless. Rich countries filled most of it. Now it is nearly full.</p>
+        <div class="num"><div class="k">1</div><div><h3>Polluter pays</h3><p class="t-body soft">You broke it, you fix it.</p></div></div>
+        <div class="num"><div class="k">2</div><div><h3>Common but differentiated</h3><p class="t-body soft">A shared problem, but richer nations lead.</p></div></div>
+        <div class="num"><div class="k">3</div><div><h3>Right to develop</h3><p class="t-body soft">Poor countries still need room to grow.</p></div></div>
       </div>
     </div>
   </div>
@@ -353,23 +360,23 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 7 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Q5</i> Beyond the readings</div>
-  <h2>AI is hungry for electricity</h2>
+  <div class="kicker"><i>Q5</i><span class="label">Beyond the readings</span></div>
+  <h2 class="t-title">AI is hungry for electricity</h2>
   <div class="body">
-    <div class="row" style="grid-template-columns:1fr 1.05fr;gap:calc(var(--u)*4);align-items:end">
+    <div class="row" style="grid-template-columns:1fr 1.05fr;gap:calc(var(--u)*4.5);align-items:center">
       <div>
-        <div class="chart" style="position:relative">
+        <div class="chart">
           <div class="col"><div class="v">415 <small>TWh</small></div><div class="b" style="height:40%;background:var(--sky)"></div></div>
           <div class="col"><div class="v">945 <small>TWh</small></div><div class="b" style="height:88%;background:var(--clay)"></div></div>
         </div>
-        <div class="yrs"><span>2024</span><span>2030 (projected)</span></div>
-        <p class="soft" style="margin-top:calc(var(--u)*1.2);font-size:calc(var(--u)*1.2)">Data centres worldwide. 2024 ≈ 1.5% of all electricity; more than double by 2030, mainly because of AI. Source: IEA, <i>Energy and AI</i> (2025)</p>
+        <div class="yrs"><span>2024</span><span>2030, projected</span></div>
+        <p class="t-note" style="margin-top:calc(var(--u)*1.2)">Data centres worldwide. About 1.5% of all electricity in 2024, more than double by 2030. IEA, <i>Energy and AI</i> (2025)</p>
       </div>
       <div>
-        <div class="issue"><i style="background:var(--clay)"></i><div><h3>Climate</h3><p>Much of the new demand is still met by fossil fuel power.</p></div></div>
-        <div class="issue"><i style="background:var(--gold)"></i><div><h3>Local burden</h3><p>Cooling needs lots of water; nearby grids and residents carry the cost.</p></div></div>
-        <div class="issue"><i style="background:var(--sky)"></i><div><h3>Fairness, like Q4</h3><p>Benefits go to rich users; climate harm falls on poor regions.</p></div></div>
-        <div class="issue" style="margin:0"><i style="background:var(--forest-2)"></i><div><h3>Transparency and the future</h3><p>Firms rarely disclose energy per model. Are we spending our grandchildren's share (Q1)?</p></div></div>
+        <div class="issue"><i style="background:var(--clay)"></i><div><h3>Climate</h3><p class="t-body soft">New demand still met largely by fossil fuels.</p></div></div>
+        <div class="issue"><i style="background:var(--gold)"></i><div><h3>Local burden</h3><p class="t-body soft">Cooling water, strained grids, costs on residents.</p></div></div>
+        <div class="issue"><i style="background:var(--sky)"></i><div><h3>Fairness</h3><p class="t-body soft">Rich users benefit; poor regions bear the harm.</p></div></div>
+        <div class="issue"><i style="background:var(--forest-2)"></i><div><h3>Transparency</h3><p class="t-body soft">Energy per model is rarely disclosed.</p></div></div>
       </div>
     </div>
   </div>
@@ -378,32 +385,32 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 8 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Examples</i> From the textbook</div>
-  <h2>Two companies, opposite attitudes</h2>
+  <div class="kicker"><i>Examples</i><span class="label">From the textbook</span></div>
+  <h2 class="t-title">Two companies, opposite attitudes</h2>
   <div class="body">
     <div class="row c2 ex2">
       <div class="card g">
         <span class="pill p-f">Progressive</span>
-        <h3>3M: "Pollution Prevention Pays"</h3>
+        <h3>3M · Pollution Prevention Pays</h3>
         <div class="hero hl-f">$975M</div>
-        <div class="cap">saved by thousands of 3P projects since 1975</div>
-        <ul class="dots">
-          <li>$175M+ spent on equipment to recycle and burn off solvents</li>
-          <li>Volatile organic air emissions cut <b>93%</b> (1990 to 2000)</li>
-          <li>Even though plants <b>already met</b> EPA standards</li>
+        <p class="cap t-note">saved by 3P projects since 1975</p>
+        <ul class="dots t-body">
+          <li>$175M+ spent on solvent recycling</li>
+          <li>Air emissions down <b>93%</b>, 1990 to 2000</li>
+          <li>Plants <b>already met</b> EPA standards</li>
         </ul>
-        <div class="lesson hl-f">Green and profitable can go together.</div>
+        <p class="lesson t-body hl-f">Green and profitable can go together.</p>
       </div>
       <div class="card r">
         <span class="pill p-c">Sub-minimal</span>
-        <h3>Shady Chemical &amp; engineer Vivian</h3>
+        <h3>Shady Chemical · engineer Vivian</h3>
         <div class="hero hl-c">Same poison, new name</div>
-        <div class="cap">Their pesticide is about to be banned as a cancer-causing chemical</div>
-        <ul class="dots">
-          <li>Plan: a substitute <b>as close to the old one as possible</b>, just enough to dodge the ban</li>
-          <li>Vivian has good reason to believe it is just as dangerous</li>
+        <p class="cap t-note">Its pesticide is about to be banned as a carcinogen</p>
+        <ul class="dots t-body">
+          <li>Plan: a near-copy, changed just enough to dodge the ban</li>
+          <li>Vivian believes it is <b>just as dangerous</b></li>
         </ul>
-        <div class="lesson hl-c">Violates the "degree-of-harm" rule: a clear health threat must go, cost is not an excuse.</div>
+        <p class="lesson t-body hl-c">Breaks the degree-of-harm rule: a clear health threat must go, whatever the cost.</p>
       </div>
     </div>
   </div>
@@ -412,23 +419,23 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 9 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Case</i> NSPE Board of Ethical Review · Case 21-2</div>
-  <h2>Plan for a climate that hasn't come yet?</h2>
+  <div class="kicker"><i>Case</i><span class="label">NSPE Board of Ethical Review · Case 21-2</span></div>
+  <h2 class="t-title">Plan for a climate that hasn't come yet?</h2>
   <div class="body">
     <div class="case">
       <div class="story">
-        <div class="beat"><span>The job</span><p>Engineer A designs an access road across a <b>tidal saltmarsh</b> for a new health care facility.</p></div>
-        <div class="beat"><span>The rules</span><p>Local rules use <b>past weather</b> only. Nothing about <b>sea level rise</b>.</p></div>
-        <div class="beat"><span>The worry</span><p>The road could make <b>20 upstream homes unlivable 10+ years sooner</b>. A asks for a costly flood study.</p></div>
-        <div class="beat x" style="padding-bottom:0"><span>The client</span><p>"Skip it, unless regulators ask."</p></div>
+        <div class="beat"><span class="label">The job</span><p class="t-body">An access road across a <b>tidal saltmarsh</b> for a new health care facility.</p></div>
+        <div class="beat"><span class="label">The rules</span><p class="t-body">Based on <b>past weather</b>. Nothing on sea level rise.</p></div>
+        <div class="beat"><span class="label">The worry</span><p class="t-body"><b>20 upstream homes</b> could flood 10+ years sooner. Engineer A proposes a flood study.</p></div>
+        <div class="beat x"><span class="label">The client</span><p>"Skip it, unless regulators ask."</p></div>
       </div>
-      <div class="ruling">
-        <div class="t">Board's ruling</div>
-        <div class="m">Engineer A <u>must</u> consider climate impacts on the public, even if no law requires it.</div>
-        <div class="stp"><span class="k">1</span><p>Talk to the client: risks, fixes, and the client's own risk of skipping it.</p></div>
-        <div class="stp"><span class="k">2</span><p>Refused? Put the concern in an <b>engineering report</b> for regulators and the public.</p></div>
-        <div class="stp" style="margin:0"><span class="k">3</span><p>Refused again? <b>Withdraw</b> from the project.</p></div>
-        <div class="code">NSPE Code I.1 · II.3.a · III.2.d (sustainable development)</div>
+      <div class="panel ruling">
+        <span class="label">Board's ruling</span>
+        <p class="t-lead">Consider climate impacts on the public, even if no law requires it.</p>
+        <div class="stp"><span class="k">1</span><p>Talk to the client.</p></div>
+        <div class="stp"><span class="k">2</span><p>If refused, report the concern to regulators and the public.</p></div>
+        <div class="stp"><span class="k">3</span><p>If refused again, withdraw.</p></div>
+        <p class="t-note">NSPE Code I.1 · II.3.a · III.2.d</p>
       </div>
     </div>
   </div>
@@ -437,15 +444,15 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.55em;width:calc(var(
 
 <!-- 10 -->
 <section class="slide"><div class="frame">
-  <div class="kicker"><i>Discussion</i> Your turn</div>
-  <h2>Let's talk</h2>
+  <div class="kicker"><i>Discussion</i><span class="label">Your turn</span></div>
+  <h2 class="t-title">Let's talk</h2>
   <div class="body">
     <div class="dq">
-      <div class="card"><div class="no">01</div><h3>Would you walk away?</h3><p>You are Engineer A and the client says no. Would you really quit the job? Who should pay to study a future that hasn't happened: client, government or engineer?</p></div>
-      <div class="card"><div class="no">02</div><h3>AI's energy bill</h3><p>Should AI engineers limit or disclose energy and water use when no law requires it? Which of the three attitudes do big AI firms show today?</p></div>
-      <div class="card"><div class="no">03</div><h3>Is Kyoto still fair?</h3><p>Today China emits the most. Should developing countries still have no targets? Should <b>past</b> or <b>current</b> emissions count more?</p></div>
+      <div class="card"><div class="no">01</div><h3>Would you walk away?</h3><p class="t-body">The client says no. Do you quit? And who should pay to study a future that hasn't happened yet?</p></div>
+      <div class="card"><div class="no">02</div><h3>AI's energy bill</h3><p class="t-body">Should AI engineers limit or disclose energy use without a law? Which attitude do big AI firms show today?</p></div>
+      <div class="card"><div class="no">03</div><h3>Is Kyoto still fair?</h3><p class="t-body">China now emits the most. Should developing nations still have no targets? Count past emissions, or current?</p></div>
     </div>
-    <div class="src">Sources · Harris, Pritchard &amp; Rabins, <i>Engineering Ethics: Concepts and Cases</i> 4th ed., ch. 9 · Peter Singer, <i>One World</i> (2002), ch. 2 · NSPE BER Case 21-2, nspe.org · IEA, <i>Energy and AI</i> (2025), iea.org</div>
+    <p class="src t-note">Sources · Harris, Pritchard &amp; Rabins, <i>Engineering Ethics</i> 4th ed., ch. 9 · Singer, <i>One World</i> (2002), ch. 2 · NSPE BER Case 21-2 · IEA, <i>Energy and AI</i> (2025)</p>
   </div>
   <div class="foot"><span>Engineers and the Environment · Group 7E</span><span class="pg"></span></div>
 </div></section>
