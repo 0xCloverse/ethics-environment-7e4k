@@ -79,9 +79,16 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 .s-title .frame{justify-content:space-between}
 .s-title .kicker i{background:#a9d7b8;color:#163f2c}
 .s-title .kicker .label{color:#a9d7b8}
-.s-title h1{font-size:calc(var(--u)*6.4);line-height:1.02;letter-spacing:-.035em;margin:0;font-weight:850}
+.s-title h1{white-space:nowrap;font-size:calc(var(--u)*5.4);line-height:1.04;letter-spacing:-.035em;margin:0;font-weight:850}
 .s-title .sub{font-size:calc(var(--u)*2.4);font-weight:600;line-height:1.3;color:#c9d8cc;margin-top:calc(var(--u)*2.4)}
 .s-title .who{font-size:calc(var(--u)*1.5);color:#c9d8cc;border-top:1px solid rgba(243,239,228,.25);padding-top:calc(var(--u)*1.6)}
+
+.s-title .cover-main{display:grid;grid-template-columns:1.15fr 1fr;gap:calc(var(--u)*5);align-items:center}
+.s-title .reads{font-size:calc(var(--u)*1.35);line-height:1.5;color:#c9d8cc;margin-top:calc(var(--u)*2.6)}
+.toc{list-style:none;margin:0;padding:0 0 0 calc(var(--u)*3);border-left:1px solid rgba(243,239,228,.25)}
+.toc li{display:grid;grid-template-columns:calc(var(--u)*3.4) 1fr;align-items:baseline;font-size:calc(var(--u)*1.5);line-height:1.35;padding:calc(var(--u)*.75) 0;border-bottom:1px solid rgba(243,239,228,.12)}
+.toc li:last-child{border-bottom:0;color:#c9d8cc}
+.toc span{font-size:calc(var(--u)*1);font-weight:800;letter-spacing:.08em;color:#a9d7b8}
 
 /* ---------- 2 definition ---------- */
 .def{border-left:calc(var(--u)*.5) solid var(--forest-2);padding-left:calc(var(--u)*2)}
@@ -181,8 +188,11 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
   .sinkwrap svg{max-width:70%}
   .t-title{font-size:calc(var(--u)*3.1);overflow-wrap:break-word}
   .s-title h1{font-size:calc(var(--u)*3.4)}
+  .s-title .cover-main{grid-template-columns:1fr!important;gap:calc(var(--u)*6)}
+  .toc{padding-left:0;border-left:0;border-top:1px solid rgba(243,239,228,.25)}
+  .toc li{font-size:calc(var(--u)*1.6)}
   .s-title .sub{font-size:calc(var(--u)*2.4)}
-  .s-title .frame{min-height:calc(var(--u)*115);gap:calc(var(--u)*6)}
+  .s-title .frame{gap:calc(var(--u)*7)}
   .s-title{overflow:hidden;position:relative}
   .kicker{flex-wrap:wrap}
   .foot,.hud .nav,.progress{display:none}
@@ -204,8 +214,19 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 <!-- 1 -->
 <section class="slide s-title"><div class="frame">
   <div class="kicker"><i>Group Study 2</i><span class="label">Environment</span></div>
-  <div>
-    <h1>Engineers and<br>the Environment</h1>
+  <div class="cover-main">
+    <div>
+      <h1>Engineers and<br>the Environment</h1>
+      <p class="reads">Readings: Harris et al., <i>Engineering Ethics</i> ch. 9<br>Peter Singer, <i>One World</i> ch. 2 “One Atmosphere”</p>
+    </div>
+    <ol class="toc">
+      <li><span>Q1</span>Sustainable development</li>
+      <li><span>Q2</span>Three attitudes toward the environment</li>
+      <li><span>Q3</span>Anthropocentric vs. non-anthropocentric</li>
+      <li><span>Q4</span>The Kyoto Protocol and fairness</li>
+      <li><span>Q5</span>AI and energy use</li>
+      <li><span>+</span>Examples, NSPE case, discussion</li>
+    </ol>
   </div>
   <div class="who">Group 7E · 한태영 · Engineering Ethics · Oct. 26, 2026</div>
 </div></section>
