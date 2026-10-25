@@ -101,6 +101,7 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
 .att .c-red{border-top:calc(var(--u)*.55) solid var(--clay)}
 .att .c-gold{border-top:calc(var(--u)*.55) solid var(--gold)}
 .att .c-green{border-top:calc(var(--u)*.55) solid var(--forest-2)}
+.att .lawpic{width:calc(var(--u)*13);height:auto;color:var(--ink);margin-bottom:calc(var(--u)*1.4)}
 .att h3{font-size:calc(var(--u)*2);margin:calc(var(--u)*.4) 0 calc(var(--u)*.9)}
 .att{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*2.2)}
 .att .say{font-size:calc(var(--u)*1.5);font-weight:750;margin-top:calc(var(--u)*.8)}
@@ -256,16 +257,19 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:calc(var(-
   <div class="body">
     <div class="att">
       <div class="card c-red">
+        <svg class="lawpic" viewBox="0 0 240 92" role="img" aria-label="Effort stops below the law line"><rect x="84" y="62" width="72" height="26" rx="6" fill="var(--clay)"/><line x1="10" y1="40" x2="230" y2="40" stroke="currentColor" stroke-width="4"/><text x="10" y="30" font-size="15" font-weight="800" letter-spacing="1.5" fill="currentColor">LAW</text><line x1="10" y1="88" x2="230" y2="88" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/></svg>
         <span class="pill p-c">Sub-minimal</span>
         <h3>Less than the law requires</h3>
         <p class="t-body soft">Does as little as possible. Pays the fine if it is cheaper than fixing the problem.</p>
       </div>
       <div class="card c-gold">
+        <svg class="lawpic" viewBox="0 0 240 92" role="img" aria-label="Effort reaches exactly the law line"><rect x="84" y="40" width="72" height="48" rx="6" fill="var(--gold)"/><line x1="10" y1="40" x2="230" y2="40" stroke="currentColor" stroke-width="4"/><text x="10" y="30" font-size="15" font-weight="800" letter-spacing="1.5" fill="currentColor">LAW</text><line x1="10" y1="88" x2="230" y2="88" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/></svg>
         <span class="pill p-g">Minimalist (compliance)</span>
         <h3>Exactly what the law requires</h3>
         <p class="t-body soft">Follows regulations, often reluctantly. Sees them as a cost of doing business.</p>
       </div>
       <div class="card c-green">
+        <svg class="lawpic" viewBox="0 0 240 92" role="img" aria-label="Effort goes above the law line"><rect x="84" y="10" width="72" height="78" rx="6" fill="var(--forest-2)"/><line x1="10" y1="40" x2="230" y2="40" stroke="currentColor" stroke-width="4"/><text x="10" y="30" font-size="15" font-weight="800" letter-spacing="1.5" fill="currentColor">LAW</text><line x1="10" y1="88" x2="230" y2="88" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/></svg>
         <span class="pill p-f">Progressive</span>
         <h3>More than the law requires</h3>
         <p class="t-body soft">Supported by the CEO. Sees protection as good for the long term, and some firms are genuinely committed.</p>
